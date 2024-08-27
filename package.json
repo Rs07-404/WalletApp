@@ -1,0 +1,19 @@
+{
+  "name": "card_wallet",
+  "version": "1.0.0",
+  "description": "Wallet for storing credit/debit cards",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "raunak rajesh shah",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0"
+  }
+}

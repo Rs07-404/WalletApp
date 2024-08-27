@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wallet</title>
+</head>
+<body>
+    <div id="login-form" class="login">
+        <div class="heading">Wallet</div>
+        <div class="topDesignDiv"><img src="./assets/doodles.png" width="80%" height="100%"/></div>
+        <div class="bottomDesignDiv"><img src="./assets/doodle_2.png" width="80%" height="100%"/></div>
+        <div class="form">
+            <div class="formhead">Login</div>
+            <div class="inputs">
+                <input type="text" name="username" id="login-username" placeholder="Username">
+                <input type="password" name="password" id="login-password" placeholder="Password">
+                <label for="isAdmin"><input type="checkbox" name="isAdmin" id="isAdmin">Admin</label>
+                <button id="login-button">Login</button>
+                <button id="createAccountButton" onclick="showsignup()">Create a New Account ?</button>
+            </div>
+        </div>
+    </div>
+    <div id="add-Card" class="login">
+        <div class="topDesignDiv"><img src="./assets/doodles.png" width="80%" height="100%"/></div>
+        <div class="bottomDesignDiv"><img src="./assets/doodle_2.png" width="80%" height="100%"/></div>
+        <div class="form">
+            <div id="formHead" class="formhead">Add Card</div>
+            <div class="inputs">
+                <input type="text" name="name" id="cardHolderName" placeholder="Card Holder Name" required>
+                <input type="number" name="cardNumber" id="cardNumber" placeholder="Card Number" required>
+                <input t required="text" name="cardType" id="cardType" placeholder="Card Type" required>
+                <input type="date" name="expirationDate" id="expirationDate" placeholder="Expiration Date" required>
+                <input type="number" name="cvv" id="cvv" placeholder="CVV" required>
+                <input type="text" name="bankName" id="bankName" placeholder="Bank Name" required>
+                <input type="text" name="country" id="country" placeholder="Issuing Country" required>
+            </div>
+            <div class="buttons">
+                <button id="edit-button">Edit</button>
+                <button id="add-button">Add</button>
+                <button id="cancel" class="cancel_button" onclick="hideAddForm()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id="signup-form" class="signup">
+        <div class="heading">Wallet</div>
+        <div class="topDesignDiv"><img src="./assets/doodles.png" width="80%" height="100%"/></div>
+        <div class="bottomDesignDiv"><img src="./assets/doodle_2.png" width="80%" height="100%"/></div>
+        <div class="form">
+            <div class="formhead">SignUp</div>
+            <div class="inputs">
+                <input type="text" name="name" id="signupName" placeholder="Name">
+                <input type="number" name="phone" id="signupPhone" placeholder="Phone / Mobile Number">
+                <input type="email" name="email" id="signupEmail" placeholder="Email Address">
+                <input type="text" name="username" id="signupUsername" placeholder="Create a unique Username">
+                <input type="password" name="password" id="signupPassword" placeholder="Password">
+                <input type="password" name="password" id="signupRePassword" placeholder="Retype Password">
+            </div>
+            <div class="buttons">
+                <button id="signupButton">Submit</button>
+                <button id="createAccountButton" onclick="showlogin()">Already a user? Login</button>
+            </div>
+        </div>
+        <div id="signupMessage"></div>
+    </div>
+    <div id="content" class="content">
+        <div class="header">
+            <div class="left">Wallet</div>
+            <div class="right">
+                <div class="ul">
+                    <div class="li">About Us</div>
+                    <div class="li">Community</div>
+                    <button onclick="logout()" class="li logoutButton">LogOut</button>
+                </div>
+                <div id="profile" class="profile"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div id="greeting" class="greeting"></div>
+            <div class="cardheadBar"><div class="cardsHead">Cards</div><button id="add-card" onclick="showAddForm()">Add New Card</button></div>
+            <div id="cards" class="cards">
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
