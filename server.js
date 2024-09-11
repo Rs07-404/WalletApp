@@ -215,7 +215,7 @@ app.post('/cards', authenticate,(req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'An error occurred while adding the card.' });
     }
-});
+}); 
 
 app.delete('/cards/:id', authenticate, async (req, res) => {
     const cardId = parseInt(req.params.id);
