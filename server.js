@@ -5,7 +5,9 @@ const bcrypt = require("bcryptjs")
 require("dotenv").config();
 const host = process.env.SERVERHOST;
 const port = process.env.PORT;
+const cookieParser = require("cookie-parser")
 app.use(express.json());
+app.use(cookieParser());
 app.use("/",express.static("./public"));
 
 const database = process.env.DATABASE;
@@ -170,7 +172,7 @@ app.post('/login', (req, res) => {
             if (!isMatch) return res.status(401).json({ success: false, message: 'Invalid password.' });
 
             const token = jwt.sign({ user_id: user.user_id, username: user.username, role: role }, process.env.SECRET_KEY, { expiresIn: '1h' });
-            res.json({ success: true, message: 'Login successful', token: token, user_id: user.user_id, name: user.name });
+            res.cookie("token",token,{maxAge: 24*60*60*1000, httpOnly: true, secure: true, sameSite: 'strict'}).json({ success: true, message: 'Login successful', token: token, user_id: user.user_id, name: user.name });
         });
     });
 });

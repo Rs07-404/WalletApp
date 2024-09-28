@@ -153,7 +153,7 @@ async function login(username, password, isAdmin){
         const result = await response.json();
 
         if (response.ok) {
-            document.cookie = `token=${result.token}; path=/;`;
+            // document.cookie = `token=${result.token}; path=/;`;
             document.cookie = `user_id=${result.user_id}; path=/;`;
             document.getElementById("greeting").innerHTML = `Hi ${result.name}!`
             if(isAdmin){
